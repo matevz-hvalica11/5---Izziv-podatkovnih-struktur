@@ -4,8 +4,8 @@ using System.Linq;
 
 class HashNode
 {
-    public string Key { get; set; }
-    public string Value { get; set; }
+    public string Key { get; set; }  // Ključ (npr. "ime", "priimek", "kraj", ...)
+    public string Value { get; set; } // Vrednost, povezana s ključem (npr. "Avgust", "Mlakar", ...)
 
     public HashNode(string key, string value)
     {
