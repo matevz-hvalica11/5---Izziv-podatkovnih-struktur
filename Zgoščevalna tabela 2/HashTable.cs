@@ -16,10 +16,10 @@ class HashNode
 
 class HashTable
 {
-    private const double LoadFactorThreshold = 0.7; // Prag za povečanje tabele
-    private int _size;
-    private int _count;
-    private LinkedList<HashNode>[] _buckets;
+    private const double LoadFactorThreshold = 0.7; // Prag za povečanje tabele (ko tabela doseže 70% zasedenosti, se poveča)
+    private int _size;  // Trenutna velikost tabele (število bucketov)
+    private int _count;  // Število shranjenih elementov
+    private LinkedList<HashNode>[] _buckets; // Polje povezanih seznamov
 
     public HashTable(int initialSize = 5)
     {
@@ -31,12 +31,12 @@ class HashTable
         }
     }
 
-    private int GetHash(string key)
+    private int GetHash(string key) // Izračuna hash indeks za dani ključ
     {
         return Math.Abs(key.GetHashCode()) % _size;
     }
 
-    public void Insert(string key, string value)
+    public void Insert(string key, string value) // Doda nov element v tabelo ali posodobo obstoječo vrednost
     {
         if (_count >= _size * LoadFactorThreshold)
         {
