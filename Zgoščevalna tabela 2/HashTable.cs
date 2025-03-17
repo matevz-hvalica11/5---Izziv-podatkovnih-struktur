@@ -97,7 +97,7 @@ class HashTable
         _size = newSize;
     }
 
-    public void Print()
+    public void Print()  // Izpiše vse elemente v hash tabeli
     {
         Console.WriteLine("HashTable stanje:");
         for (int i = 0; i < _size; i++)
@@ -105,7 +105,7 @@ class HashTable
             Console.Write($"Bucket {i}: ");
             foreach (var node in _buckets[i])
             {
-                Console.Write($"[{node.Key}: {node.Value}] -> ");
+                Console.Write($"[{node.Key}: {node.Value}] -> ");  // Če je več elementov v enem "bucketu", jih izpiše v verižni obliki
             }
             Console.WriteLine("null");
         }
