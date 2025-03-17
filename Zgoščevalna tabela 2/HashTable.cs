@@ -57,14 +57,14 @@ class HashTable
         _count++;
     }
 
-    public string Search(string key)
+    public string Search(string key)  // Izračuna hash indeks za dani ključ
     {
         int index = GetHash(key);
         var node = _buckets[index].FirstOrDefault(n => n.Key == key);
         return node != null ? node.Value : "Ni najdeno";
     }
 
-    public void Delete(string key)
+    public void Delete(string key)  // Odstrani element iz tabele
     {
         int index = GetHash(key);
         var node = _buckets[index].FirstOrDefault(n => n.Key == key);
@@ -75,7 +75,7 @@ class HashTable
         }
     }
 
-    private void Resize()
+    private void Resize()  // Poveča velikost tabele, ko je presežen prag zasedenosti, in prerazporedi elemente
     {
         int newSize = _size * 2;
         var newBuckets = new LinkedList<HashNode>[newSize];
