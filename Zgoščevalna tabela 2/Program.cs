@@ -2,7 +2,7 @@
 {
     static void Main()
     {
-        HashTable hashTable = new HashTable(5);
+        HashTable hashTable = new HashTable(5);  // Ustvarimo hash tabelo velikosti 5
 
         hashTable.Insert("ime", "Avgust");
         hashTable.Insert("priimek", "Mlakar");
