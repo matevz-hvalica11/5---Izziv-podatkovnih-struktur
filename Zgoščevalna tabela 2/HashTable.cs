@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class HashNode
+class HashNode  // Osnovni gradnik hash tabele, hranimo pare-ključ vrednost in uporablja se v bucketih oz. "vedrih" (bucketi shranjujejo podatke v tabeli)
 {
     public string Key { get; set; }  // Ključ (npr. "ime", "priimek", "kraj", ...)
     public string Value { get; set; } // Vrednost, povezana s ključem (npr. "Avgust", "Mlakar", ...)
