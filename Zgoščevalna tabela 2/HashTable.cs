@@ -7,21 +7,21 @@ class HashNode
     public string Key { get; set; }  // Ključ (npr. "ime", "priimek", "kraj", ...)
     public string Value { get; set; } // Vrednost, povezana s ključem (npr. "Avgust", "Mlakar", ...)
 
-    public HashNode(string key, string value)
+    public HashNode(string key, string value)  // Konstruktor za razred HashNode, omogoča enostavno ustvarjanje novih vozlišč, za shranjevanje podatkov
     {
-        Key = key;
-        Value = value;
+        Key = key;  // Shrani podano "key" v lastnost "key" objekta
+        Value = value;  // Shrani podano "value" v lastnost "value" objekta
     }
 }
 
-class HashTable
+class HashTable  // Implementira hash tabelo, ki omogoča hitro vstavljanje, iskanje in brisanje podatkov s pomočjo ključev
 {
     private const double LoadFactorThreshold = 0.7; // Prag za povečanje tabele (ko tabela doseže 70% zasedenosti, se poveča)
     private int _size;  // Trenutna velikost tabele (število bucketov)
     private int _count;  // Število shranjenih elementov
     private LinkedList<HashNode>[] _buckets; // Polje povezanih seznamov
 
-    public HashTable(int initialSize = 5)
+    public HashTable(int initialSize = 5)  // Definira konstruktor za razred HashTable in določa začetno velikost hash tabele
     {
         _size = initialSize;
         _buckets = new LinkedList<HashNode>[_size];
