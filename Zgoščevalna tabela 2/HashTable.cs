@@ -36,7 +36,7 @@ class HashTable  // Implementira hash tabelo, ki omogoča hitro vstavljanje, isk
         return Math.Abs(key.GetHashCode()) % _size;
     }
 
-    public void Insert(string key, string value) // Doda nov element v tabelo ali posodobo obstoječo vrednost
+    public void Insert(string key, string value) // Doda nov element v tabelo ali posodobi obstoječo vrednost
     {
         if (_count >= _size * LoadFactorThreshold)
         {
@@ -107,7 +107,7 @@ class HashTable  // Implementira hash tabelo, ki omogoča hitro vstavljanje, isk
             {
                 Console.Write($"[{node.Key}: {node.Value}] -> ");  // Če je več elementov v enem "bucketu", jih izpiše v verižni obliki
             }
-            Console.WriteLine("null");
-        }
+            Console.WriteLine("null");  // Verižna oblika (ang. chaining) je tehnika za reševanje kolizij v hash tabela
+        }                               // Kolizija se zgodi, ko dva različna ključa dobita enak hash indeks
     }
 }
